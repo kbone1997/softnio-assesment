@@ -5,10 +5,47 @@ const decrementBtn = document.getElementById('decrement');
 const cartCount = document.getElementById('cartCount');
 const sizeButtons = document.querySelectorAll('.size-btn');
 const addToCartBtn = document.getElementById('addToCart');
+const bandColor = document.querySelectorAll(".band");
 
 let quantity = 1;
 let selectedSize = 'M';
 let cartItems = 0;
+
+function changeTemplate(imageUrl)
+{
+    const productImage = document.getElementById("productImage");
+    productImage.src = imageUrl;
+}
+
+function selectButton(selected)
+{
+    sizeButtons.forEach(button =>
+    {
+        button.classList.remove('border-priceText');
+    })
+
+    selected.classList.add("border-priceText")
+    // Reset all buttons: Remove text color class from all spans
+    document.querySelectorAll('.size-text').forEach(span =>
+    {
+        span.classList.remove('text-priceText');
+        span.classList.add('text-primaryTitle');
+    });
+
+    // Add the text-blue-600 class only to the span within the clicked button
+    const sizeText = selected.querySelector('.size-text');
+    sizeText.classList.remove('text-primaryTitle');
+    sizeText.classList.add('text-priceText');
+}
+
+bandColor.forEach(singleBand =>
+{
+    singleBand.addEventListener('click', () =>
+    {
+        bandColor.forEach(band => band.classList.remove('border-2'));
+        singleBand.classList.add("border-2");
+    })
+})
 
 incrementBtn.addEventListener('click', () =>
 {
@@ -23,16 +60,6 @@ decrementBtn.addEventListener('click', () =>
         quantity--;
         quantityInput.value = quantity;
     }
-});
-
-sizeButtons.forEach(button =>
-{
-    button.addEventListener('click', () =>
-    {
-        sizeButtons.forEach(btn => btn.classList.remove('border-blue-600', 'text-blue-600'));
-        button.classList.add('border-blue-600', 'text-blue-600');
-        selectedSize = button.dataset.price;
-    });
 });
 
 addToCartBtn.addEventListener('click', () =>
