@@ -68,3 +68,30 @@ addToCartBtn.addEventListener('click', () =>
     cartCount.textContent = cartItems;
     alert(`Added ${quantity} item(s) of size ${selectedSize} to cart!`);
 });
+
+// Get Modal Elements
+const openModalBtn = document.getElementById('openModal');
+const closeModalBtn = document.getElementById('closeModal');
+const closeFooterBtn = document.getElementById('closeFooter');
+const modal = document.getElementById('modal');
+
+// Open Modal
+openModalBtn.addEventListener('click', () =>
+{
+    modal.classList.remove('hidden');
+});
+
+// Close Modal
+const closeModal = () =>
+{
+    modal.classList.add('hidden');
+};
+
+closeModalBtn.addEventListener('click', closeModal);
+closeFooterBtn.addEventListener('click', closeModal);
+
+// Close Modal when clicking outside content
+window.addEventListener('click', (e) =>
+{
+    if (e.target === modal) closeModal();
+});

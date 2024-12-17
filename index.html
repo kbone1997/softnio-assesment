@@ -117,6 +117,36 @@
                 </button>
             </div>
         </div>
+
+        <!-- modal code -->
+        <!-- Open Modal Button -->
+        <button id="openModal" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+            Open Modal
+        </button>
+
+        <!-- Modal Component -->
+        <div id="modal" class="fixed flex inset-0 items-center justify-center bg-gray-800 bg-opacity-50 hidden">
+            <!-- Modal Content -->
+            <div class="bg-white rounded-lg shadow-lg w-full max-w-md">
+                <!-- Modal Header -->
+                <div class="flex justify-between items-center border-b p-4">
+                    <h3 class="text-lg font-semibold text-gray-800">Modal Title</h3>
+                    <button id="closeModal" class="text-gray-400 hover:text-gray-600">&times;</button>
+                </div>
+                <!-- Modal Body -->
+                <div class="p-4">
+                    <p class="text-gray-600">
+                        This is a sample modal. You can put any content here, including forms, text, or buttons.
+                    </p>
+                </div>
+                <!-- Modal Footer -->
+                <div class="flex justify-end border-t p-4">
+                    <button id="closeFooter"
+                        class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 mr-2">Cancel</button>
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Confirm</button>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
