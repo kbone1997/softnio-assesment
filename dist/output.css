@@ -937,6 +937,11 @@ video {
   background-color: rgb(250 204 21 / var(--tw-bg-opacity, 1));
 }
 
+.bg-priceText {
+  --tw-bg-opacity: 1;
+  background-color: rgb(101 118 255 / var(--tw-bg-opacity, 1));
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -1017,6 +1022,10 @@ video {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .font-\[\] {
   font-family: ;
 }
@@ -1056,6 +1065,18 @@ video {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.text-\[20px\] {
+  font-size: 20px;
+}
+
+.text-\[18px\] {
+  font-size: 18px;
+}
+
+.text-\[13px\] {
+  font-size: 13px;
 }
 
 .font-bold {
@@ -1151,6 +1172,10 @@ video {
 .text-baseText {
   --tw-text-opacity: 1;
   color: rgb(128 145 167 / var(--tw-text-opacity, 1));
+}
+
+.text-\[1\] {
+  color: 1;
 }
 
 .line-through {

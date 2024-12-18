@@ -18,7 +18,7 @@
 
         <!-- Product Details -->
         <div class="flex-col md:w-[52%] sm:w-[400px] p-8 border-2 border-red-500">
-            <h1 class="text-[40px] tracking-tighter font-bold text-primaryTitle mb-2">Classy Modern Smart Watch</h1>
+            <h1 class="text-[40px] tracking-tighter font-bold text-primaryTitle mb-2">Classy Modern Smart watch</h1>
             <div class="flex items-center mb-4">
                 <div class="flex text-yellow-400">
                     &#9733;&#9733;&#9733;&#9733;&#9734;
@@ -27,8 +27,8 @@
             </div>
 
             <p class="text-2xl font-semibold text-gray-800">
-                <span class="line-through text-gray-400">$99.00</span>
-                <span class="text-blue-600">$79.00</span>
+                <span class="line-through text-gray-400 font-[400] text-[20px]">$99.00</span>
+                <span class="text-priceText">$79.00</span>
             </p>
 
             <p class="mt-4 text-gray-500 leading-relaxed">
@@ -49,7 +49,7 @@
 
             <!-- Band Color -->
             <div class="mt-6">
-                <p class="font-medium text-gray-700">Band Color</p>
+                <p class="text-primaryTitle font-[700] text-[18px]">Band Color</p>
                 <div class="flex gap-3 mt-2">
                     <span
                         class="band w-[24px] h-[24px] rounded-full border-bandColor1 cursor-pointer flex items-center justify-center"
@@ -77,7 +77,7 @@
 
             <!-- Wrist Size -->
             <div class="mt-6">
-                <p class="font-medium text-gray-700 mb-2">Wrist Size</p>
+                <p class="text-primaryTitle font-[700] text-[18px]">Wrist Size</p>
                 <div class="flex gap-2">
                     <button
                         class="size-btn px-4 py-2 border rounded text-sm text-gray-600 bg-gray-100 hover:bg-blue-100 hover:text-blue-600"
@@ -114,7 +114,8 @@
 
                 <!-- Add to Cart -->
                 <div class="mt-6">
-                    <button id="addToCart" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+                    <button id="addToCart"
+                        class="bg-priceText text-white px-6 py-2 rounded hover:bg-blue-700 font-[700] text-[13px]">
                         Add to Cart
                     </button>
                 </div>
@@ -131,21 +132,21 @@
     <div id="modal" class="fixed flex inset-0 items-center justify-center bg-gray-800 bg-opacity-50 hidden p-[44px]">
         <!-- Modal Content -->
         <div class="bg-white rounded-lg shadow-lg w-[600px]">
-            <!-- Modal Header -->
-            <div class="flex justify-between items-center border-b p-4">
-                <h3 class="text-lg font-semibold text-gray-800">Your Cart</h3>
-                <button id="closeModal" class="text-gray-400 hover:text-gray-600">&times;</button>
-            </div>
+
             <!-- Modal Body -->
             <div class="p-6">
+                <!-- Modal Header -->
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Your Cart</h3>
+                </div>
                 <table class="w-full text-left">
-                    <thead class="font-[100] text-[14px] text-baseText">
+                    <thead class="text-[14px] text-baseText">
                         <tr class="border-b">
-                            <th class="pb-2">Item</th>
-                            <th class="pb-2">Color</th>
-                            <th class="pb-2">Size</th>
-                            <th class="pb-2">Qnt</th>
-                            <th class="pb-2">Price</th>
+                            <th class="pb-2 font-[400] ">Item</th>
+                            <th class="pb-2 font-[400] text-center">Color</th>
+                            <th class="pb-2 font-[400] text-center">Size</th>
+                            <th class="pb-2 font-[400] text-center">Qnt</th>
+                            <th class="pb-2 font-[400] text-right">Price</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -153,19 +154,19 @@
                         <tr class="border-b text-[14px]">
                             <td class="py-3 flex items-center">
                                 <img src="https://via.placeholder.com/40" alt="watch" class="mr-3 rounded" />
-                                <span class="">Classy Modern Smart Watch</span>
+                                <span class="font-[400]">Classy Modern Smart Watch</span>
                             </td>
-                            <td class="py-3 ">Black</td>
-                            <td class="py-3  font-semibold">XL</td>
-                            <td class="py-3 ">1</td>
-                            <td class="py-3  font-semibold">$99.00</td>
+                            <td class="py-3 text-center">Black</td>
+                            <td class="py-3 text-center font-[700]">XL</td>
+                            <td class="py-3 text-center font-[700]">1</td>
+                            <td class="py-3 font-[700] text-right">$99.00</td>
                         </tr>
                     </tbody>
 
                 </table>
             </div>
             <!-- Modal Footer -->
-            <div class="flex justify-end border-t p-4">
+            <div class="flex justify-end p-4">
                 <button id="closeFooter" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 mr-2">Cancel</button>
                 <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Confirm</button>
             </div>
