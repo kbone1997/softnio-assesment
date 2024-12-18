@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Detail - Smart Watch</title>
     <link href="./dist/output.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/niaicon@latest/css/niaicon.min.css">
 </head>
 
 <body class="bg-gray-50">
     <!-- Container -->
-    <div class="max-w-6xl mx-auto px-4 py-10 flex flex-col lg:flex-row items-center gap-10">
+    <div class="max-w-7xl mx-auto px-4 py-10 flex flex-col lg:flex-row items-center border-2 border-red-500">
         <!-- Product Image -->
-        <div class="flex-1">
+        <div class="flex sm:w-[400px] md:w-[48%] border-2 border-red-500">
             <img id="productImage" src="assets/purple.png" alt="Smart Watch" class="rounded-lg shadow-lg">
         </div>
 
         <!-- Product Details -->
-        <div class="flex-1">
+        <div class="flex-col md:w-[52%] sm:w-[400px] p-8 border-2 border-red-500">
             <h1 class="text-[40px] tracking-tighter font-bold text-primaryTitle mb-2">Classy Modern Smart Watch</h1>
             <div class="flex items-center mb-4">
                 <div class="flex text-yellow-400">
@@ -34,8 +33,19 @@
 
             <p class="mt-4 text-gray-500 leading-relaxed">
                 I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I
-                will give you a complete account of the system.
+                will give you a complete account of the system,and expound the actual teaching.
             </p>
+
+            <div class="flex gap-8 items-center mt-6">
+                <div class="flex-col">
+                    <p class="text-baseText text-[14px]">Type</p>
+                    <p class="text-primaryTitle font-[700]">Watch</p>
+                </div>
+                <div class="flex-col">
+                    <p class="text-baseText text-[14px]">Model Number</p>
+                    <p class="text-primaryTitle font-[700]">Forerunner 290XT</p>
+                </div>
+            </div>
 
             <!-- Band Color -->
             <div class="mt-6">
@@ -109,42 +119,55 @@
                     </button>
                 </div>
             </div>
-
-            <!-- Checkout Notification -->
-            <div class="mt-8">
-                <button class="flex items-center gap-2 bg-yellow-400 text-white px-4 py-2 rounded shadow-lg">
-                    Checkout <span id="cartCount" class="bg-orange-500 text-xs px-2 py-1 rounded-full">0</span>
-                </button>
-            </div>
         </div>
-
-        <!-- modal code -->
-        <!-- Open Modal Button -->
-        <button id="openModal" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-            Open Modal
+    </div>
+    <!-- Checkout Notification -->
+    <div class="mt-8">
+        <button id="openModal" class="flex items-center gap-2 bg-yellow-400 text-white px-4 py-2 rounded shadow-lg">
+            Checkout <span id="cartCount" class="bg-orange-500 text-xs px-2 py-1 rounded-full">0</span>
         </button>
+    </div>
+    <!-- Modal Component -->
+    <div id="modal" class="fixed flex inset-0 items-center justify-center bg-gray-800 bg-opacity-50 hidden p-[44px]">
+        <!-- Modal Content -->
+        <div class="bg-white rounded-lg shadow-lg w-[600px]">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center border-b p-4">
+                <h3 class="text-lg font-semibold text-gray-800">Your Cart</h3>
+                <button id="closeModal" class="text-gray-400 hover:text-gray-600">&times;</button>
+            </div>
+            <!-- Modal Body -->
+            <div class="p-6">
+                <table class="w-full text-left">
+                    <thead class="font-[100] text-[14px] text-baseText">
+                        <tr class="border-b">
+                            <th class="pb-2">Item</th>
+                            <th class="pb-2">Color</th>
+                            <th class="pb-2">Size</th>
+                            <th class="pb-2">Qnt</th>
+                            <th class="pb-2">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- First Item -->
+                        <tr class="border-b text-[14px]">
+                            <td class="py-3 flex items-center">
+                                <img src="https://via.placeholder.com/40" alt="watch" class="mr-3 rounded" />
+                                <span class="">Classy Modern Smart Watch</span>
+                            </td>
+                            <td class="py-3 ">Black</td>
+                            <td class="py-3  font-semibold">XL</td>
+                            <td class="py-3 ">1</td>
+                            <td class="py-3  font-semibold">$99.00</td>
+                        </tr>
+                    </tbody>
 
-        <!-- Modal Component -->
-        <div id="modal" class="fixed flex inset-0 items-center justify-center bg-gray-800 bg-opacity-50 hidden">
-            <!-- Modal Content -->
-            <div class="bg-white rounded-lg shadow-lg w-full max-w-md">
-                <!-- Modal Header -->
-                <div class="flex justify-between items-center border-b p-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Modal Title</h3>
-                    <button id="closeModal" class="text-gray-400 hover:text-gray-600">&times;</button>
-                </div>
-                <!-- Modal Body -->
-                <div class="p-4">
-                    <p class="text-gray-600">
-                        This is a sample modal. You can put any content here, including forms, text, or buttons.
-                    </p>
-                </div>
-                <!-- Modal Footer -->
-                <div class="flex justify-end border-t p-4">
-                    <button id="closeFooter"
-                        class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 mr-2">Cancel</button>
-                    <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Confirm</button>
-                </div>
+                </table>
+            </div>
+            <!-- Modal Footer -->
+            <div class="flex justify-end border-t p-4">
+                <button id="closeFooter" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 mr-2">Cancel</button>
+                <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Confirm</button>
             </div>
         </div>
     </div>
