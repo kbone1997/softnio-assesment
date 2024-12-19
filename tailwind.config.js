@@ -11,6 +11,7 @@ module.exports = {
         bandColor2: "#1FCEC9",
         bandColor3: "#4B97D3",
         bandColor4: "#3B4747",
+        buttonBorder: "#DBDFEA",
       },
       fontFamily: {
         sans: ["Roboto", "sans-serif"],

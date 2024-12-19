@@ -10,14 +10,14 @@
 
 <body class="bg-gray-50">
     <!-- Container -->
-    <div class="max-w-7xl mx-auto px-4 py-10 flex flex-col lg:flex-row items-center border-2 border-red-500">
+    <div class="max-w-7xl mx-auto px-4 py-10 flex flex-col lg:flex-row items-center">
         <!-- Product Image -->
-        <div class="flex sm:w-[400px] md:w-[48%] border-2 border-red-500">
+        <div class="flex sm:w-[400px] md:w-[48%]">
             <img id="productImage" src="assets/purple.png" alt="Smart Watch" class="rounded-lg shadow-lg">
         </div>
 
         <!-- Product Details -->
-        <div class="flex-col md:w-[52%] sm:w-[400px] p-8 border-2 border-red-500">
+        <div class="flex-col md:w-[52%] sm:w-[400px] p-8">
             <h1 class="text-[40px] tracking-tighter font-bold text-primaryTitle mb-2">Classy Modern Smart watch</h1>
             <div class="flex items-center mb-4">
                 <div class="flex text-yellow-400">
@@ -51,23 +51,23 @@
             <div class="mt-6">
                 <p class="text-primaryTitle font-[700] text-[18px]">Band Color</p>
                 <div class="flex gap-3 mt-2">
-                    <span
-                        class="band w-[24px] h-[24px] rounded-full border-bandColor1 cursor-pointer flex items-center justify-center"
+                    <span id="purple"
+                        class="band w-[24px] h-[24px] rounded-full border-2 border-bandColor1 cursor-pointer flex items-center justify-center"
                         onclick="changeTemplate('assets/purple.png')">
                         <div class="w-[16px] h-[16px] p-1 bg-bandColor1 rounded-full"></div>
                     </span>
 
-                    <span
+                    <span id="cyan"
                         class="band w-[24px] h-[24px] rounded-full border-bandColor2 cursor-pointer flex items-center justify-center"
                         onclick="changeTemplate('assets/cyan.png')">
                         <div class="w-[16px] h-[16px] bg-bandColor2 rounded-full"></div>
                     </span>
-                    <span
+                    <span id="blue"
                         class="band w-[24px] h-[24px] rounded-full border-bandColor3 cursor-pointer flex items-center justify-center"
                         onclick="changeTemplate('assets/blue.png')">
                         <div class="w-[16px] h-[16px] bg-bandColor3 rounded-full"></div>
                     </span>
-                    <span
+                    <span id="black"
                         class="band w-[24px] h-[24px] rounded-full border-bandColor4 cursor-pointer flex items-center justify-center"
                         onclick="changeTemplate('assets/black.png')">
                         <div class="w-[16px] h-[16px] bg-bandColor4 rounded-full"></div>
@@ -80,23 +80,23 @@
                 <p class="text-primaryTitle font-[700] text-[18px]">Wrist Size</p>
                 <div class="flex gap-2">
                     <button
-                        class="size-btn px-4 py-2 border rounded text-sm text-gray-600 bg-gray-100 hover:bg-blue-100 hover:text-blue-600"
-                        data-price="69" onclick="selectButton(this)"><span
-                            class="size-text font-bold text-primaryTitle">S</span>
+                        class="size-btn px-4 py-2 border border-priceText rounded text-sm text-gray-600 bg-gray-100 hover:bg-blue-100 hover:text-blue-600"
+                        data-price=69 data-size="S" onclick="selectButton(this)"><span
+                            class="size-text font-bold text-priceText">S</span>
                         $69</button>
                     <button
                         class="size-btn px-4 py-2 border rounded text-sm text-gray-600 bg-gray-100 hover:bg-blue-100 hover:text-blue-600"
-                        data-price="79" onclick="selectButton(this)"><span
+                        data-price=79 data-size="M" onclick="selectButton(this)"><span
                             class="size-text font-bold text-primaryTitle">M</span>
                         $79</button>
                     <button
                         class="size-btn px-4 py-2 border rounded text-sm text-gray-600 bg-gray-100 hover:bg-blue-100 hover:text-blue-600"
-                        data-price="89" onclick="selectButton(this)"><span
+                        data-price=89 data-size="L" onclick="selectButton(this)"><span
                             class="size-text font-bold text-primaryTitle">L</span>
                         $89</button>
                     <button
                         class="size-btn px-4 py-2 border rounded text-sm text-gray-600 bg-gray-100 hover:bg-blue-100 hover:text-blue-600"
-                        data-price="99" onclick="selectButton(this)"><span
+                        data-price=99 data-size="XL" onclick="selectButton(this)"><span
                             class="size-text font-bold text-primaryTitle">XL</span>
                         $99</button>
                 </div>
@@ -123,7 +123,7 @@
         </div>
     </div>
     <!-- Checkout Notification -->
-    <div class="mt-8">
+    <div id="checkoutDiv" class="mt-8 flex justify-center items-center z-10 mb-8">
         <button id="openModal" class="flex items-center gap-2 bg-yellow-400 text-white px-4 py-2 rounded shadow-lg">
             Checkout <span id="cartCount" class="bg-orange-500 text-xs px-2 py-1 rounded-full">0</span>
         </button>
@@ -149,26 +149,17 @@
                             <th class="pb-2 font-[400] text-right">Price</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <!-- First Item -->
-                        <tr class="border-b text-[14px]">
-                            <td class="py-3 flex items-center">
-                                <img src="https://via.placeholder.com/40" alt="watch" class="mr-3 rounded" />
-                                <span class="font-[400]">Classy Modern Smart Watch</span>
-                            </td>
-                            <td class="py-3 text-center">Black</td>
-                            <td class="py-3 text-center font-[700]">XL</td>
-                            <td class="py-3 text-center font-[700]">1</td>
-                            <td class="py-3 font-[700] text-right">$99.00</td>
-                        </tr>
-                    </tbody>
+                    <tbody id="cart-body" class="text-primaryTitle">
 
+                    </tbody>
                 </table>
             </div>
             <!-- Modal Footer -->
-            <div class="flex justify-end p-4">
-                <button id="closeFooter" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 mr-2">Cancel</button>
-                <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Confirm</button>
+            <div class="flex justify-end p-4 text-[13px]">
+                <button id="closeFooter"
+                    class="px-4 py-2 rounded font-[700] border-2 border-buttonBorder hover:bg-gray-400 mr-2">Continue
+                    Shopping</button>
+                <button class="px-4 py-2 bg-priceText font-[700] text-white rounded hover:bg-blue-700">Checkout</button>
             </div>
         </div>
     </div>
